@@ -1,0 +1,304 @@
+/* 
+1- common styles
+2- general styles
+3- sections styles
+    3.0 header section
+    3.1 home section
+    3.2 about section
+    3.3 portofolio section
+    3.4 service section
+    3.5 prices section
+    3.6 team section
+    3.7 blog page
+    3.8 contact section
+    3.9 footer
+*/
+
+/* 1- common style */
+/* 
+ - overlay
+ - opacity hover
+ - section header
+ - section padding
+ - hover effect 1 (left to right)
+ - hover effect 2 (top to bottom)
+*/
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(85, 83, 83, 0.7);
+}
+
+.hover-opacity{
+    transition: opacity .5s;
+}
+.hover-opacity:hover{
+    opacity: .8; 
+}
+
+.ltr-effect{
+    position: relative;
+}
+
+.ltr-effect::after{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    background: #333333;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.ltr-effect:hover:after{
+    width: 100%;
+}
+
+/* 2- general styles */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.clear{
+    clear: both;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    font-family: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+.pd-y{
+    padding: 120px 0;
+}
+
+.section-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section-header .section-title{
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.section-header .line{
+    display: block;
+    height: 5px;
+    width: 60px;
+    background-color: rgb(107, 162, 245);
+    margin: 0 auto 70px auto;
+}
+
+/* 3- section styles */
+
+/* 3.0 header section */
+
+.header{
+    /* background-color: grey  ; */
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.header .logo{
+    width: 40%;
+    float: left;
+}
+
+.header .logo img {
+    width: 20%;
+    margin-top: 15px;
+}
+
+.header .nav{
+    width: 60% ;
+    float: left;
+    list-style-type: none;
+    text-align: right;
+}
+
+.header .nav > li{
+    display: inline-block;
+    text-align: right;
+}
+
+.header .nav > li > a {
+color: aliceblue;
+display: block;
+padding: 30px 15px;  
+font-size: 15px;
+}
+
+.header .nav > li > a.active:after, 
+.header .nav > li > a:after{
+    content: "";
+    display: block;
+    height: 3px;
+    background-color:rgb(108, 151, 251);
+    transition: width .5s;
+    margin-top: 2px;
+}
+
+.header .nav > li > a.active:after{
+    width: 100%;
+}
+.header .nav > li > a:after{
+    width: 0%;
+}
+
+.header .nav > li > a:hover:after{
+    width: 100%;
+}
+
+.header-content{
+    /*overflow: hidden; /*to solve float problem*/
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background-color: rgb(108, 151, 251);
+    width: 150px;
+    text-align: center;
+    left: -50%;
+    top: 70%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ;
+    list-style: none;
+}
+
+.dropdown-menu a{
+    color: white;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* 3.1 home section */
+.home {
+    height: 100vh;
+    background-image: url(../IMAGES/images/background/background1.webp);
+    background-size: cover; /* css3*/
+    position: relative;
+}
+
+.home-content{
+    position: absolute;
+    width: 65%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.home .title{
+    color: white;
+    font-size: 3.1rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-desc{
+    margin: 10px 0;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.btn{
+    min-width: 160px;
+    padding: 15px 0;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.btn-start{
+    margin-right: 10px;
+    background-color: white;
+}
+
+.btn-learn{
+    background-color: rgb(107, 162, 245);
+    color: white;
+
+}
+
+/* 3.2 about section */
+.about{
+
+}
+
+.about-content{
+    overflow: hidden;
+    text-align: center;
+}
+
+.about-item{
+    width: 25%;
+    float: left;
+    border: 1px solid #e8e8e8;
+    padding: 50px 20px;
+}
+
+.about-item:hover{
+background-color: ;
+}
+
+.about-item.mg{
+    margin: 0 5%;
+}
+
+.about-item .icon{
+    color: rgb(114, 148, 248);
+    margin-bottom: 10px;
+}
+
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 10px ;
+}
+
+.about-item-des{
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.about-item-link{
+    color: rgb(88, 88, 253);
+    text-transform: capitalize;
+    
+}
